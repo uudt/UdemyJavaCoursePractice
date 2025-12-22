@@ -1,6 +1,7 @@
 package dev.uudt;
 
 import java.util.Arrays;
+import java.util.function.ObjLongConsumer;
 
 public class Main {
 
@@ -48,5 +49,32 @@ public class Main {
         // built-in method to print two-dimentional array
         System.out.println(Arrays.deepToString(arr2));
 
+        arr2[1] = new int[] {10, 20, 30};
+        System.out.println(Arrays.deepToString(arr2));
+
+
+
+        /// Multi-dimensional arrays
+        Object[] multiArr = new Object[3];
+        System.out.println(Arrays.toString(multiArr));
+
+        multiArr[0] = new String[] {"a", "b", "c"};
+        System.out.println(Arrays.deepToString(multiArr));
+
+        multiArr[1] = new String[][] {
+            {"1", "2"},
+            {"3", "4", "5"},
+            {"6", "7", "8", "9"}
+        };
+        System.out.println(Arrays.deepToString(multiArr));
+
+        multiArr[2] = new int[2][2][2];
+        System.out.println(Arrays.deepToString(multiArr));
+
+        for (Object item : multiArr) {
+            System.out.println("Element type = " + item.getClass().getSimpleName());
+            System.out.println("Element toString() = " + item);
+            System.out.println(Arrays.deepToString((Object[]) item));
+        }
     }
 }
