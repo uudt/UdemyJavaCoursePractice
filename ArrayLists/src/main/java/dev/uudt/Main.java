@@ -9,7 +9,7 @@ record GroceryItem(String name, String type, int count) {
     }
 
     @Override
-    public String toString(String name) {
+    public String toString() {
         return String.format("%d %s in %s", count, name.toUpperCase(), type);
     }
 }
@@ -44,7 +44,8 @@ public class Main {
         groceryList.add(new GroceryItem("milk"));
         groceryList.add(new GroceryItem("oranges", "PRODUCE", 8));
         // add to specified index
-        groceryList.add(0, new GroceryItem("apples", "PRODUCE", 3));
+        groceryList.set(0, new GroceryItem("apples", "PRODUCE", 3));
+        groceryList.remove(1);
         System.out.println(groceryList);
 
     }
