@@ -1,4 +1,4 @@
-package dev.uudt;
+import dev.uudt.Contact;
 
 import java.util.ArrayList;
 
@@ -14,7 +14,8 @@ public class MobilePhone {
 
     public boolean addNewContact(Contact contact) {
         // if (!this.myContacts.contains(contact)) {
-        if (findContact(contact) == -1) {
+        if (findContact(contact.getName()) == -1) {
+            myContacts.add(contact);
             return true;
         }
         return false;
