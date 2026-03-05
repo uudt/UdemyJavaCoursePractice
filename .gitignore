@@ -16,6 +16,10 @@ target/
 # OS
 .DS_Store
 
+# nested gitignore 
+**/.gitignore
+!.gitignore
+
 # BlueJ files
 *.ctxt
 
