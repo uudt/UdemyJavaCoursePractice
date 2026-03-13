@@ -1,6 +1,6 @@
 package dev.uudt;
 
-public class Dog extends Animal {
+public class Dog extends Mammal {
 
 
     public Dog(String type, String size, double weight) {
@@ -10,11 +10,16 @@ public class Dog extends Animal {
     @Override
     public void move(String speed) {
         if (speed.equals("slow")) {
-            System.out.println(type + " walking");
+            System.out.println(getExplicitType() + " walking");
         } else {
-            System.out.println(type + " running");
+            System.out.println(getExplicitType() + " running");
         }
+    }
 
+    @Override
+    public void shedHair() {
+
+        System.out.println(getExplicitType() + " shed hair all the time");
     }
 
     @Override
@@ -26,5 +31,11 @@ public class Dog extends Animal {
             System.out.println("Woof! ");
         }
     }
+
+    // can't be overriden since this method is final in Animal class
+//    @Override
+//    public String getExplicitType() {
+//        return "";
+//    }
 
 }
