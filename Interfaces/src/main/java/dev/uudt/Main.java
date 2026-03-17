@@ -24,6 +24,17 @@ public class Main {
 
         // Part 2
         inFlight(flier);
+        inFlight(new Jet());
+
+        Trackable truck = new Truck();
+        truck.track();
+
+        // there is no such thing as instance fields on an interface
+        // access interface field (constant) using type name and field name
+        double kmsTravelled = 100;
+        double milesTravelled = kmsTravelled * FlightEnabled.KM_TO_MILES;
+        System.out.printf("The truck travelled %.2f km or %.2f miles%n",
+            kmsTravelled, milesTravelled);
 
     }
 
