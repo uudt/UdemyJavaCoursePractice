@@ -17,9 +17,17 @@ public class Jet implements FlightEnabled, Trackable {
         System.out.println(getClass().getSimpleName() + " is flying");
     }
 
+    //green icon with I inside means we're implementing abstract method
     @Override
     public void track() {
         System.out.println(getClass().getSimpleName() + "'s coordinates recorded");
+    }
+
+    //blue icon with O inside means we're overriding method
+    @Override
+    public FlightStages transition(FlightStages stage) {
+        System.out.println(getClass().getSimpleName() + " transitioning");
+        return FlightEnabled.super.transition(stage);
     }
 
 }
