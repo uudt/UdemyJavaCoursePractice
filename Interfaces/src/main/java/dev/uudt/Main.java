@@ -56,6 +56,8 @@ public class Main {
         triggerFliers(betterFliers);
         flyFliers(betterFliers);
         landFliers(betterFliers);
+
+
     }
 
     private static void inFlight(FlightEnabled flier) {
