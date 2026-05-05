@@ -25,7 +25,7 @@ abstract class Point implements Mappable {
 
     @Override
     public void render() {
-        System.out.println("Render " + this + " as POINT (" + location + ")");
+        System.out.println("Render " + this + " as POINT (" + location() + ")");
     }
 
     private String location() {
@@ -41,7 +41,7 @@ abstract class Line implements Mappable {
         this.locations = new double[locations.length][];
         int index = 0;
         for (var l : locations) {
-            this.locations[index++] = Mappable.stringToLatLon();
+            this.locations[index++] = Mappable.stringToLatLon(l);
         }
     }
 
