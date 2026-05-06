@@ -2,9 +2,19 @@ package dev.uudt;
 
 import dev.uudt.model.PAStudent;
 import dev.uudt.model.Student;
+import dev.uudt.util.QueryItem;
+import dev.uudt.util.QueryList;
 
 import java.util.ArrayList;
 import java.util.List;
+
+record Employee(String name) implements QueryItem {
+
+    @Override
+    public boolean matchFieldValue(String fieldName, String value) {
+        return false;
+    }
+}
 
 public class Main {
 
@@ -28,6 +38,17 @@ public class Main {
 
         testList(new ArrayList<String>(List.of("Able", "Barry", "Charlie")));
         testList(new ArrayList<Integer>(List.of(1, 2, 3)));
+
+        var queryList = new QueryList<>(paStudents);
+        var matches = queryList.getMatches("Course", "Python");
+        printMoreLists(matches);
+
+        var students2021 = QueryList.getMatches(students, "YearStarted", "2021");
+//        var students2021 = QueryList.<Student>getMatches(new ArrayList<>(), "YearStarted", "2021");
+        printMoreLists(students2021);
+
+//        QueryList<Employee> employeeList = new QueryList<>();
+
     }
 
     public static void printMoreLists(List<? extends Student> students) {
