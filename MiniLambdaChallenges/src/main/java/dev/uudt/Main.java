@@ -2,11 +2,14 @@ package dev.uudt;
 
 import java.util.Arrays;
 import java.util.function.Consumer;
+import java.util.function.Function;
+import java.util.function.UnaryOperator;
 
 public class Main {
 
     public static void main(String[] args) {
 
+        // Challenge 1
         Consumer<String> printWords = new Consumer<String>() {
 
             @Override
@@ -42,5 +45,43 @@ public class Main {
         };
 
         printWordsConcise.accept("Let's split this up into an array");
+
+        // Challenge 2
+        // Write the method of challenge 2 as a lambda expression
+        Function<String, String> everySecondChar = source -> {
+            StringBuilder returnVal = new StringBuilder();
+            for (int i = 0; i < source.length(); i++) {
+                if (i % 2 == 1) {
+                    returnVal.append(source.charAt(i));
+                }
+            }
+            return returnVal.toString();
+        };
+
+        // The same lambda using UnaryOperator
+        UnaryOperator<String> everySecondCharU = source -> {
+            StringBuilder returnVal = new StringBuilder();
+            for (int i = 0; i < source.length(); i++) {
+                if (i % 2 == 1) {
+                    returnVal.append(source.charAt(i));
+                }
+            }
+            return returnVal.toString();
+        };
+
     }
+
+    // Challenge 2
+    // Write the following method as a lambda expression
+    public static String everySecondChar(String source) {
+
+        StringBuilder returnVal = new StringBuilder();
+        for (int i = 0; i < source.length(); i++) {
+            if (i % 2 == 1) {
+                returnVal.append(source.charAt(i));
+            }
+        }
+        return returnVal.toString();
+    }
+
 }
