@@ -72,6 +72,11 @@ public class Main {
         // Challenge 3
         System.out.println(everySecondCharU.apply("1234567890"));
 
+        // Challenge 5
+        System.out.println(everySecondChar.apply("1234567890"));
+
+        String result = everySecondCharacter(everySecondChar, "1234567890");
+        System.out.println(result);
 
     }
 
