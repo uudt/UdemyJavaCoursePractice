@@ -69,7 +69,10 @@ public class Main {
             return returnVal.toString();
         };
 
+        // Challenge 3
         System.out.println(everySecondCharU.apply("1234567890"));
+
+
     }
 
     // Challenge 2
@@ -84,5 +87,13 @@ public class Main {
         }
         return returnVal.toString();
     }
+
+    // Challenge 4
+    public static String everySecondCharacter(Function<String, String> func,
+                                              String source) {
+        return func.apply(source);
+    }
+
+
 
 }
