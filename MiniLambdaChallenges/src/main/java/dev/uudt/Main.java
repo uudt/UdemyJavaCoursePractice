@@ -83,6 +83,10 @@ public class Main {
         Supplier<String> iLoveJava = () -> "I love Java!";
         Supplier<String> iLoveJava2 = () -> {return "I love Java!";};
 
+        // Challenge 7
+        System.out.println(iLoveJava.get());
+        System.out.println(iLoveJava2.get());
+
     }
 
     // Challenge 2
