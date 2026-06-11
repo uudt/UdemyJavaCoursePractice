@@ -69,6 +69,7 @@ public class Main {
             return returnVal.toString();
         };
 
+        System.out.println(everySecondCharU.apply("1234567890"));
     }
 
     // Challenge 2
